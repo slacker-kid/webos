@@ -21,6 +21,7 @@ interface FileSystemContextType {
   createDir: (path: string, name: string) => void;
   deleteItem: (path: string) => void;
   listDir: (path: string) => FileNode[];
+  resetFileSystem: () => void;
 }
 
 const FileSystemContext = createContext<FileSystemContextType | undefined>(undefined);
@@ -195,8 +196,12 @@ export const FileSystemProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     return current;
   };
 
+  const resetFileSystem = () => {
+    setFs(JSON.parse(JSON.stringify(initialFS)));
+  };
+
   return (
-    <FileSystemContext.Provider value={{ fs, readFile, writeFile, createFile, createDir, deleteItem, listDir }}>
+    <FileSystemContext.Provider value={{ fs, readFile, writeFile, createFile, createDir, deleteItem, listDir, resetFileSystem }}>
       {children}
     </FileSystemContext.Provider>
   );

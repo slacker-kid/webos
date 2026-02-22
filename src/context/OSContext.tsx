@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type AppType = 'snake' | 'terminal' | 'files' | 'editor' | 'settings' | 'browser';
+export type AppType = 'snake' | 'terminal' | 'files' | 'editor' | 'settings' | 'browser' | 'sheets' | 'deck' | 'calculator';
 
 export interface WindowState {
   id: string;
