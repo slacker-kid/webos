@@ -35,7 +35,7 @@ const OSContext = createContext<OSContextType | undefined>(undefined);
 export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [windows, setWindows] = useState<WindowState[]>([]);
   const [activeWindowId, setActiveWindowId] = useState<string | null>(null);
-  const [wallpaper, setWallpaper] = useState<string>('linear-gradient(to right, #4facfe 0%, #00f2fe 100%)');
+  const [wallpaper, setWallpaper] = useState<string>('repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,0,255,0.18) 59px, rgba(255,0,255,0.18) 60px), repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,0,255,0.18) 59px, rgba(255,0,255,0.18) 60px), linear-gradient(to bottom, #0a0014 0%, #1a0030 50%, #2d004d 75%, #0a0a2e 100%)');
   const [zIndexCounter, setZIndexCounter] = useState(10);
 
   useEffect(() => {
