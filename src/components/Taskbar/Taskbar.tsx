@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useOS } from '../../context/OSContext';
 import { format } from 'date-fns';
-import { Monitor, Terminal, FileText, Settings, AppWindow, Gamepad2 } from 'lucide-react';
+import { Monitor, Terminal, FileText, Settings, AppWindow, Gamepad2, Globe } from 'lucide-react';
 
 const Taskbar: React.FC = () => {
   const { windows, activeWindowId, focusWindow, minimizeWindow } = useOS();
@@ -49,6 +49,7 @@ const Taskbar: React.FC = () => {
               {window.appType === 'editor' && <FileText size={14} />}
               {window.appType === 'settings' && <Settings size={14} />}
               {window.appType === 'snake' && <Gamepad2 size={14} />}
+              {window.appType === 'browser' && <Globe size={14} />}
               <span className="truncate">{window.title}</span>
             </button>
           ))}

@@ -11,6 +11,7 @@ import FileManager from './Apps/FileManager';
 import TextEditor from './Apps/TextEditor';
 import Snake from './Apps/Snake';
 import Settings from './Apps/Settings';
+import InternetExplorer from './Apps/InternetExplorer';
 
 const AppContainer: React.FC<{ appType: string; data?: unknown; windowId: string }> = ({ appType, data, windowId }) => {
   switch (appType) {
@@ -19,6 +20,7 @@ const AppContainer: React.FC<{ appType: string; data?: unknown; windowId: string
     case 'editor': return <TextEditor initialPath={data ? (data as any).path : undefined} />;
     case 'snake': return <Snake />;
     case 'settings': return <Settings />;
+    case 'browser': return <InternetExplorer />;
     default: return <div className="p-4 text-red-500">App not found: {appType}</div>;
   }
 };

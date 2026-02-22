@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useOS } from '../../context/OSContext';
-import { Terminal, Folder, FileText, Settings, Gamepad2 } from 'lucide-react';
+import { Terminal, Folder, FileText, Settings, Gamepad2, Globe } from 'lucide-react';
 
 interface IconProps {
   label: string;
@@ -70,10 +70,15 @@ const Desktop: React.FC = () => {
           icon={<Gamepad2 size={32} className="text-green-400" />} 
           onClick={() => openWindow('snake', 'Snake')} 
         />
-        <Icon 
-          label="Settings" 
-          icon={<Settings size={32} className="text-gray-400" />} 
-          onClick={() => openWindow('settings', 'Settings')} 
+        <Icon
+          label="Internet"
+          icon={<Globe size={32} className="text-blue-400" />}
+          onClick={() => openWindow('browser', 'Internet Explorer')}
+        />
+        <Icon
+          label="Settings"
+          icon={<Settings size={32} className="text-gray-400" />}
+          onClick={() => openWindow('settings', 'Settings')}
         />
       </div>
 
